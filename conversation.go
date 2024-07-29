@@ -22,7 +22,14 @@ type Conversation struct {
 	Read                bool                 `json:"read"`
 	ConversationMessage ConversationMessage  `json:"conversation_message"`
 	ConversationParts   ConversationPartList `json:"conversation_parts"`
+	ConversationRating  *ConversationRating  `json:"conversation_rating"`
 	TagList             *TagList             `json:"tags"`
+	TeamAssigneeID      int64                `json:"team_assignee_id"`
+}
+
+type ConversationRating struct {
+	Rating    int `json:"rating"`
+	CreatedAt int `json:"created_at"`
 }
 
 // A ConversationMessage is the message that started the conversation rendered for presentation
